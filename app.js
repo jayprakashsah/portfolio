@@ -343,6 +343,27 @@ const PROJECT_DETAILS = {
                 <li><strong>AI Diet & Lifestyle Engine</strong>: Custom 7-day meal plans and physical guides calculated from vitals histories. Includes automated text-to-speech audio report readouts.</li>
             </ul>
         `
+    },
+    'farmer-friend': {
+        title: 'Farmer Friend AI Advisor',
+        date: '2026',
+        category: 'AI Agricultural Advisor',
+        tech: ['React Native', 'Python FastAPI', 'TensorFlow', 'OpenCV', 'OpenWeather API'],
+        gitLink: 'https://github.com/jayprakashsah',
+        liveLink: 'https://github.com/jayprakashsah',
+        imgGrad: 'img-grad-5',
+        icon: 'sprout',
+        desc: `
+            <p><strong>Farmer Friend</strong> is a smart AI-driven agricultural mobile application offering leaf disease detection, automated treatment suggestions, and climate-adaptive plant healthcare recommendations.</p>
+            <p>This project leverages computer vision models and local weather integrations to provide farmers with proactive, actionable advice to protect and maximize crop yield.</p>
+            <h4>Core Technical Implementations:</h4>
+            <ul>
+                <li><strong>Leaf Disease Detection Model</strong>: Embeds a customized TensorFlow convolutional neural network to classify crop diseases from leaf scans.</li>
+                <li><strong>Automated Treatment Suggestion</strong>: Analyzes detected infections to output immediate, safe pesticide recommendations.</li>
+                <li><strong>Climate & Health Monitor</strong>: Integrates local weather forecast indexes to assess environmental plant health stressors.</li>
+                <li><strong>Crop Recommendations</strong>: Recommends the optimal crop species to plant based on longitudinal regional climate trends.</li>
+            </ul>
+        `
     }
 };
 
