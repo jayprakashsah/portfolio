@@ -662,11 +662,47 @@ body.light-mode .stat-card {
 }
 
 /* Vertical Timeline */
-.timeline-heading {
-    font-size: 1.5rem;
+.timeline-tabs {
+    display: flex;
+    gap: 12px;
     margin-bottom: 30px;
-    position: relative;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
 }
+.timeline-tab-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: var(--border-radius-sm);
+    transition: color var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.timeline-tab-btn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+body.light-mode .timeline-tab-btn:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+.timeline-tab-btn.active {
+    color: #ffffff;
+    background: var(--accent-gradient);
+    box-shadow: 0 4px 12px -4px var(--accent-primary);
+}
+.timeline-tab-content {
+    display: none;
+}
+.timeline-tab-content.active {
+    display: block;
+    animation: tabReveal 0.4s ease forwards;
+}
+
+@keyframes tabReveal {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .timeline {
     position: relative;
     border-left: 2px solid var(--border-color);

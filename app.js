@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectFilter();
     initContactForm();
     initParticleBackground();
+    initTimelineTabs(); // New function for switching Education/Achievements tabs
 });
 
 /* ==========================================================================
@@ -78,10 +79,10 @@ function initTypingEffect() {
     if (!textTarget) return;
 
     const roles = [
-        'Aesthetic Interfaces.',
-        'High-Performance Web Apps.',
-        'Scalable Solutions.',
-        'Robust Backends.'
+        'Full-Stack Web Apps.',
+        'IoT & Embedded Systems.',
+        'AI/ML Algorithms.',
+        'Software Architectures.'
     ];
 
     let roleIndex = 0;
@@ -221,6 +222,32 @@ function initProjectFilter() {
                     card.classList.add('fade-in-anim');
                 } else {
                     card.classList.add('hide');
+                }
+            });
+        });
+    });
+}
+
+/* ==========================================================================
+   ABOUT TIMELINE TABS SWITCHER
+   ========================================================================== */
+function initTimelineTabs() {
+    const tabBtns = document.querySelectorAll('.timeline-tab-btn');
+    const tabContents = document.querySelectorAll('.timeline-tab-content');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetTab = btn.getAttribute('data-tab');
+
+            // Toggle active classes on buttons
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Toggle active classes on contents
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.getAttribute('id') === `tab-${targetTab}`) {
+                    content.classList.add('active');
                 }
             });
         });
