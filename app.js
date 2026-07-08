@@ -541,11 +541,36 @@ function initContactForm() {
                 submitIcon.classList.add('spin-icon');
             }
 
-            // Simulate server network dispatch
-            setTimeout(() => {
+            // Extract input values
+            const nameVal = document.getElementById('form-name').value;
+            const emailVal = document.getElementById('form-email').value;
+            const subjectVal = document.getElementById('form-subject').value;
+            const messageVal = document.getElementById('form-message').value;
+
+            // Submit to FormSubmit.co via AJAX
+            fetch("https://formsubmit.co/ajax/sahprakash470@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: nameVal,
+                    email: emailVal,
+                    subject: subjectVal,
+                    message: messageVal
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
                 showToast('Thank you! Your message has been sent successfully.', 'success');
                 form.reset();
-                
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+                showToast('Something went wrong. Please check your network and try again.', 'error');
+            })
+            .finally(() => {
                 // Restore button state
                 submitBtn.disabled = false;
                 submitBtn.querySelector('span').textContent = originalText;
@@ -554,7 +579,7 @@ function initContactForm() {
                     lucide.createIcons();
                     submitIcon.classList.remove('spin-icon');
                 }
-            }, 1800);
+            });
         }
     });
 }
