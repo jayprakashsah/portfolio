@@ -262,7 +262,7 @@ function initTimelineTabs() {
 const PROJECT_DETAILS = {
     'kisan-sathi': {
         title: 'Kisan Sathi Autonomous Agricultural Rover',
-        date: 'March 2026 (Ongoing)',
+        date: 'March 2026 (Completed)',
         category: 'IoT & AI System',
         tech: ['Python', 'React', 'C++ (Arduino)', 'Jetson Nano', 'OpenCV', 'Visual SLAM', 'GSM Telemetry'],
         gitLink: 'https://github.com/jayprakashsah',
@@ -383,6 +383,27 @@ const PROJECT_DETAILS = {
                 <li><strong>Condition-Based Suggestions</strong>: Analyzes reported symptoms or diseases to direct the patient to specialized clinics or medical facilities.</li>
                 <li><strong>Live Blood Registry</strong>: Coordinates real-time blood bank availability and donation contacts across regional centers.</li>
                 <li><strong>AI Skin Disease Classifier</strong>: Integrates a PyTorch-based convolutional image classification model to analyze photographic skin scans for dermatological conditions.</li>
+            </ul>
+        `
+    },
+    'robot-dog': {
+        title: 'Autonomous Quadruped Robot Dog',
+        date: '2026 (Ongoing)',
+        category: 'Robotics & Hardware',
+        tech: ['C++ (ESP32/Teensy)', 'Fusion 360 3D CAD', 'KiCad PCB Design', 'Custom Brushless Motors', 'Inverse Kinematics gait systems'],
+        gitLink: 'https://github.com/jayprakashsah',
+        liveLink: 'https://github.com/jayprakashsah',
+        imgGrad: 'img-grad-2',
+        icon: 'dog',
+        desc: `
+            <p>A professional quadrupedal robot dog designed and engineered from the ground up, combining mechanical structures, custom PCB electronics, and high-frequency control algorithms.</p>
+            <p>This project demonstrates hardware engineering and integration: from conceptual 3D layouts, mechanical simulations, physical fabrication, to low-level motor drivers PCB design and gait math solvers.</p>
+            <h4>Key Implementations:</h4>
+            <ul>
+                <li><strong>3D Printed Frame Optimization</strong>: Modeled and printed high-stress linkages and chassis parts in Fusion 360 using engineering-grade carbon-fiber filaments.</li>
+                <li><strong>Custom Brushless Motors</strong>: Hand-wound brushless motors to optimize torque-density ratios and reduce weight.</li>
+                <li><strong>Custom Motor Driver PCBs</strong>: Designed and manufactured multi-layer driver boards in KiCad to execute high-current Field Oriented Control (FOC).</li>
+                <li><strong>Inverse Kinematics Solver</strong>: Coded kinematic walking gait models executing real-time trajectory sweeps for balancing on uneven surfaces.</li>
             </ul>
         `
     }
