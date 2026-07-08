@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectFilter();
     initContactForm();
     initParticleBackground();
-    initTimelineTabs(); // New function for switching Education/Achievements tabs
+    initTimelineTabs();
+    initProjectModal(); // Initialize the dynamic details popup modal
 });
 
 /* ==========================================================================
@@ -251,6 +252,172 @@ function initTimelineTabs() {
                 }
             });
         });
+    });
+}
+
+/* ==========================================================================
+   PROJECT DETAILS DICTIONARY & MODAL HANDLER
+   ========================================================================== */
+
+const PROJECT_DETAILS = {
+    'kisan-sathi': {
+        title: 'Kisan Sathi Autonomous Agricultural Rover',
+        date: 'March 2026 (Ongoing)',
+        category: 'IoT & AI System',
+        tech: ['Python', 'React', 'C++ (Arduino)', 'Jetson Nano', 'OpenCV', 'Visual SLAM', 'GSM Telemetry'],
+        gitLink: 'https://github.com/jayprakashsah',
+        liveLink: 'https://github.com/jayprakashsah',
+        imgGrad: 'img-grad-1',
+        icon: 'tractor',
+        desc: `
+            <p><strong>Kisan Sathi</strong> is a predictive plant protection ecosystem featuring an autonomous agricultural rover and a real-time digital advisory mobile dashboard application.</p>
+            <p>It is designed to solve critical crop management and resource optimization issues faced by modern agricultural systems by automating field visual rows scouting.</p>
+            <h4>Core Technical Implementations:</h4>
+            <ul>
+                <li><strong>Edge-Computed Vision Navigation</strong>: Employs a Nvidia Jetson Nano running OpenCV algorithms to detect crop visual rows in real-time, guiding the rover steering autonomously.</li>
+                <li><strong>Precision Micro-Dosing</strong>: Implements visual computer vision models to execute targeted, height-adjusted micro-treatment spraying, reducing chemical footprint by up to 40%.</li>
+                <li><strong>Visual SLAM Navigation</strong>: Employs 3D visual mapping algorithms to avoid obstacles and construct field coordinates.</li>
+                <li><strong>GSM Telemetry Logging</strong>: Renders real-time telemetry reports directly to the user dashboard using low-latency serial nodes.</li>
+            </ul>
+        `
+    },
+    'personal-assistant': {
+        title: 'Autonomous Personal Assistant',
+        date: 'August 2025',
+        category: 'Embedded Systems',
+        tech: ['Python', 'Raspberry Pi 5', 'OpenCV', 'SIM800L', 'Speech Recog', 'React', 'PWM control'],
+        gitLink: 'https://github.com/jayprakashsah',
+        liveLink: 'https://github.com/jayprakashsah',
+        imgGrad: 'img-grad-2',
+        icon: 'bot',
+        desc: `
+            <p>An advanced multimodal physical assistant powered by a Raspberry Pi 5. It bridges intelligent high-level software logic with direct physical actuators control.</p>
+            <p>The assistant provides interactive verbal communication, facial expressiveness, and remote alerting mechanisms designed for personal task automations.</p>
+            <h4>Core Technical Implementations:</h4>
+            <ul>
+                <li><strong>AI Voice Speech Interface</strong>: Integrates neural speech-to-text algorithms and vocal text-to-speech output pipelines.</li>
+                <li><strong>OLED Emotional expressions Matrix</strong>: Renders real-time expressions on a display matrix, dynamically shifting to represent active tasks states.</li>
+                <li><strong>Wi-Fi-Independent GSM alerts</strong>: Integrates a SIM800L module to route critical alert SMS telemetry directly, ensuring failsafe notifications.</li>
+                <li><strong>PWM Motor Control</strong>: Directly links high-level navigation decisions to low-level motor boards using pulse-width modulation.</li>
+            </ul>
+        `
+    },
+    'ecommerce': {
+        title: 'MERN E-Commerce - Digital Marketplace',
+        date: 'December 2025',
+        category: 'Fullstack Web App',
+        tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB Atlas', 'JWT Auth', 'Context API'],
+        gitLink: 'https://github.com/jayprakashsah',
+        liveLink: 'https://github.com/jayprakashsah',
+        imgGrad: 'img-grad-3',
+        icon: 'shopping-bag',
+        desc: `
+            <p>A secure digital commerce marketplace built using the MERN stack. Designed with performance and database scalability at its core.</p>
+            <p>Includes a responsive shopping dashboard and an advanced administrative panel to manage inventory and track orders.</p>
+            <h4>Core Technical Implementations:</h4>
+            <ul>
+                <li><strong>JWT Authorizations Vault</strong>: Implements JSON Web Token handlers inside cookies to secure session checks and user checkouts.</li>
+                <li><strong>Database Optimization</strong>: Integrates indexed MongoDB search paths, ensuring sub-second response times for catalog lookups.</li>
+                <li><strong>State Synchronization</strong>: Renders dynamic state updates across pages using the React Context API.</li>
+                <li><strong>Production Deployment</strong>: Structured environment variables and deployed full-stack pipelines to scalable cloud nodes.</li>
+            </ul>
+        `
+    },
+    'smart-phr': {
+        title: 'SmartPHR: Advanced AI Health OS',
+        date: '2026 (Completed)',
+        category: 'AI & Health OS',
+        tech: ['React.js', 'Node.js', 'MongoDB', 'Python FastAPI', 'Gemini AI', 'OAuth 2.0', 'Google Fit API'],
+        gitLink: 'https://github.com/jayprakashsah',
+        liveLink: 'https://github.com/jayprakashsah',
+        imgGrad: 'img-grad-4',
+        icon: 'activity',
+        desc: `
+            <p><strong>SmartPHR</strong> is a fully-loaded, proactive Health Personal Health Record (PHR) operating system. It bridges static medical record data with real-time health intelligence.</p>
+            <p>By connecting custom database vaults, wearable OAuth sensors, and Gemini AI vision agents, it acts as an intelligent medical assistant and lifestyle coordinator.</p>
+            <h4>Core Technical Implementations:</h4>
+            <ul>
+                <li><strong>AI Medical Scanner & Vault</strong>: Extracts multi-page medical PDF reports (prescriptions, clinical metrics) into clean JSON. Uses vision intelligence to auto-crop X-Rays/MRIs for the patient gallery.</li>
+                <li><strong>Wearable integration (Google Fit)</strong>: OAuth 2.0 bridge to fetch Heart Rate, SpO2, Steps, and Sleep logs from smartwatches.</li>
+                <li><strong>Safety drug-drug Checker</strong>: Uses AI semantic processing to check newly added prescription lists against active records to flag chemical conflicts.</li>
+                <li><strong>AI Diet & Lifestyle Engine</strong>: Custom 7-day meal plans and physical guides calculated from vitals histories. Includes automated text-to-speech audio report readouts.</li>
+            </ul>
+        `
+    }
+};
+
+function initProjectModal() {
+    const modal = document.getElementById('project-modal');
+    const closeBtn = document.getElementById('modal-close');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    if (!modal || !closeBtn) return;
+
+    // Open Modal
+    projectCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Prevent opening if clicking on other link buttons directly (if any)
+            if (e.target.closest('.project-links')) return;
+
+            const projectId = card.getAttribute('data-project-id');
+            const data = PROJECT_DETAILS[projectId];
+
+            if (!data) return;
+
+            // Inject Content
+            document.getElementById('modal-project-title').textContent = data.title;
+            document.getElementById('modal-project-date').textContent = data.date;
+            document.getElementById('modal-project-desc').innerHTML = data.desc;
+
+            // Inject Media Placeholder
+            const mediaWrap = document.getElementById('modal-project-media');
+            mediaWrap.className = `modal-media-placeholder ${data.imgGrad}`;
+            mediaWrap.innerHTML = `<i data-lucide="${data.icon}" class="placeholder-icon"></i>`;
+
+            // Inject Tags
+            const tagsContainer = document.getElementById('modal-project-tags');
+            tagsContainer.innerHTML = '';
+            data.tech.forEach(t => {
+                const span = document.createElement('span');
+                span.textContent = t;
+                tagsContainer.appendChild(span);
+            });
+
+            // Set Button Links
+            document.getElementById('modal-git-btn').setAttribute('href', data.gitLink);
+            document.getElementById('modal-live-btn').setAttribute('href', data.liveLink);
+
+            // Re-render Lucide icons in the modal
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // Show Modal & disable body scroll
+            modal.classList.add('active');
+            document.body.classList.add('modal-open');
+        });
+    });
+
+    // Close Modal Function
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on clicking backdrop
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Close on pressing Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
     });
 }
 
