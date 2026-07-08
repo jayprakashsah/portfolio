@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Premium Creative Developer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Canvas for interactive background particles -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Floating Glassmorphic Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#home" class="logo">
+                <span class="logo-glow"></span>
+                <span class="logo-text">Creative<span>.</span></span>
+            </a>
+            
+            <nav class="navbar" id="navbar">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <i data-lucide="home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <i data-lucide="user"></i>
+                    <span>About</span>
+                </a>
+                <a href="#skills" class="nav-link" data-section="skills">
+                    <i data-lucide="cpu"></i>
+                    <span>Skills</span>
+                </a>
+                <a href="#projects" class="nav-link" data-section="projects">
+                    <i data-lucide="layers"></i>
+                    <span>Projects</span>
+                </a>
+                <a href="#contact" class="nav-link" data-section="contact">
+                    <i data-lucide="mail"></i>
+                    <span>Contact</span>
+                </a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i data-lucide="moon" class="theme-icon-dark"></i>
+                    <i data-lucide="sun" class="theme-icon-light"></i>
+                </button>
+                <a href="#contact" class="cta-nav-btn">Get In Touch</a>
+                
+                <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="section hero-section">
+            <div class="container hero-container">
+                <div class="hero-content scroll-reveal">
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        Available for Opportunities
+                    </div>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Alex Rivera</span><br>
+                        I build <span id="typing-text" class="typing-text"></span><span class="cursor">|</span>
+                    </h1>
+                    <p class="hero-description">
+                        An innovative software engineer and designer crafting highly polished web applications. I specialize in turning complex logic into aesthetic, high-performance digital experiences.
+                    </p>
+                    <div class="hero-actions-group">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View My Work</span>
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Contact Me</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual scroll-reveal">
+                    <div class="visual-wrapper">
+                        <!-- Abstract Glass Card Visual -->
+                        <div class="glass-visual-card main-card">
+                            <div class="card-header-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <pre class="code-editor-content"><code><span class="keyword">const</span> <span class="variable">developer</span> = {
+  <span class="property">name</span>: <span class="string">'Alex Rivera'</span>,
+  <span class="property">skills</span>: [<span class="string">'JS'</span>, <span class="string">'CSS'</span>, <span class="string">'React'</span>, <span class="string">'Node'</span>],
+  <span class="property">passion</span>: <span class="string">'Aesthetic UI'</span>,
+  <span class="property">coffee</span>: <span class="keyword">true</span>
+};</code></pre>
+                        </div>
+                        <div class="glass-visual-card float-card shadow-card-1">
+                            <i data-lucide="code" class="card-icon"></i>
+                            <div class="card-info">
+                                <span class="title">Clean Code</span>
+                                <span class="subtitle">Best Practices</span>
+                            </div>
+                        </div>
+                        <div class="glass-visual-card float-card shadow-card-2">
+                            <i data-lucide="palette" class="card-icon secondary"></i>
+                            <div class="card-info">
+                                <span class="title">Pixel Perfect</span>
+                                <span class="subtitle">Dynamic Layouts</span>
+                            </div>
+                        </div>
+                        <div class="visual-glow-background"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-subtitle">Discover My Story</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-info-block scroll-reveal">
+                        <h3 class="about-heading">Blending Technology with Exceptional Design</h3>
+                        <p class="about-text">
+                            With over 5 years of experience building applications for the web, I bring a unique blend of analytical thinking and aesthetic appreciation. I thrive on translating intricate client ideas into robust, responsive codebases that are user-focused and pixel-perfect.
+                        </p>
+                        <p class="about-text">
+                            I focus on writing clean, modular code, optimizing web performance, and integrating modern styling paradigms that engage and captivate audiences.
+                        </p>
+                        
+                        <div class="about-stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-num gradient-text">5+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-num gradient-text">30+</div>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-num gradient-text">99%</div>
+                                <div class="stat-label">Satisfaction Rate</div>
+                            </div>
+                        </div>
+
+                        <div class="about-action">
+                            <a href="#contact" class="btn btn-primary">
+                                <i data-lucide="download"></i>
+                                <span>Get My CV</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="about-timeline-block scroll-reveal">
+                        <h3 class="timeline-heading">My Professional Journey</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2024 - Present</span>
+                                    <h4 class="timeline-title">Lead Frontend Engineer</h4>
+                                    <span class="timeline-company">Aether Tech Solutions</span>
+                                    <p class="timeline-desc">Leading a dynamic frontend team crafting Next.js applications, building customizable component libraries, and reducing load time metrics by 35%.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2021 - 2024</span>
+                                    <h4 class="timeline-title">Full Stack Developer</h4>
+                                    <span class="timeline-company">Vortex Labs</span>
+                                    <p class="timeline-desc">Designed responsive dashboards using React and Express, refactored backend APIs, and scaled web traffic handlers to handle millions of queries monthly.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2019 - 2021</span>
+                                    <h4 class="timeline-title">Junior Developer</h4>
+                                    <span class="timeline-company">PixelCraft Studios</span>
+                                    <p class="timeline-desc">Built modular HTML/CSS layouts, integrated headless CMS platforms, and worked closely with UI/UX designers to translate Figma layouts to life.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-subtitle">What I Bring to the Table</span>
+                    <h2 class="section-title">My Skills & Expertise</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Frontend Skill Card -->
+                    <div class="glass-card skill-card scroll-reveal">
+                        <div class="skill-header">
+                            <div class="skill-icon-wrap">
+                                <i data-lucide="layout"></i>
+                            </div>
+                            <h3>Frontend Development</h3>
+                        </div>
+                        <p class="skill-desc">Crafting responsive, semantic layouts with smooth interactive interfaces and fluid UX.</p>
+                        
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>HTML5 / CSS3 / JS</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="--percent: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>React & Next.js</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="--percent: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>TypeScript</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="--percent: 85%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend Skill Card -->
+                    <div class="glass-card skill-card scroll-reveal">
+                        <div class="skill-header">
+                            <div class="skill-icon-wrap">
+                                <i data-lucide="database"></i>
+                            </div>
+                            <h3>Backend & Databases</h3>
+                        </div>
+                        <p class="skill-desc">Building resilient server-side components, handling complex business logic, APIs, and data modeling.</p>
+                        
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Node.js / Express</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="--percent: 88%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Databases (PostgreSQL / Mongo)</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="--percent: 80%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>REST APIs & GraphQL</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="--percent: 85%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DevOps & Tools Skill Card -->
+                    <div class="glass-card skill-card scroll-reveal">
+                        <div class="skill-header">
+                            <div class="skill-icon-wrap">
+                                <i data-lucide="settings"></i>
+                            </div>
+                            <h3>DevOps & Workflows</h3>
+                        </div>
+                        <p class="skill-desc">Streamlining builds, optimizing environments, ensuring robust CI/CD, and version control workflows.</p>
+                        
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Git & Version Control</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="--percent: 92%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Docker & Kubernetes</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="--percent: 70%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>AWS & Cloud Deployments</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="--percent: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Tag Cloud -->
+                <div class="tags-container scroll-reveal">
+                    <h4>More Technologies I Use:</h4>
+                    <div class="tags-cloud">
+                        <span class="tag">Webpack</span>
+                        <span class="tag">Vite</span>
+                        <span class="tag">Sass</span>
+                        <span class="tag">Redux Toolkit</span>
+                        <span class="tag">Jest</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">TailwindCSS</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-subtitle">My Creative Ventures</span>
+                    <h2 class="section-title">Selected Projects</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="filters-container scroll-reveal">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="frontend">Frontend</button>
+                    <button class="filter-btn" data-filter="fullstack">Fullstack</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                </div>
+
+                <!-- Project Grid -->
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card scroll-reveal" data-category="fullstack">
+                        <div class="project-image-wrapper">
+                            <div class="project-image-placeholder img-grad-1">
+                                <i data-lucide="activity" class="placeholder-icon"></i>
+                            </div>
+                            <div class="project-badges">
+                                <span class="project-tag">Fullstack</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Aethera Analytics Platform</h3>
+                            <p class="project-desc">A secure, real-time analytics dashboard monitoring server microservices metrics and request speeds, equipped with modern graphing systems.</p>
+                            <div class="project-tech">
+                                <span>React</span>
+                                <span>ChartJS</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View Code">
+                                    <i data-lucide="github"></i> Code
+                                </a>
+                                <a href="#" class="project-link primary" aria-label="Live Demo">
+                                    <i data-lucide="external-link"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card scroll-reveal" data-category="frontend">
+                        <div class="project-image-wrapper">
+                            <div class="project-image-placeholder img-grad-2">
+                                <i data-lucide="shopping-cart" class="placeholder-icon"></i>
+                            </div>
+                            <div class="project-badges">
+                                <span class="project-tag">Frontend</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Nova E-Commerce Experience</h3>
+                            <p class="project-desc">A high-fidelity visual digital store front-end focusing on custom fluid layout structures, fluid sliding menus, and local-storage cart management.</p>
+                            <div class="project-tech">
+                                <span>Next.js</span>
+                                <span>Framer Motion</span>
+                                <span>TypeScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View Code">
+                                    <i data-lucide="github"></i> Code
+                                </a>
+                                <a href="#" class="project-link primary" aria-label="Live Demo">
+                                    <i data-lucide="external-link"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card scroll-reveal" data-category="design">
+                        <div class="project-image-wrapper">
+                            <div class="project-image-placeholder img-grad-3">
+                                <i data-lucide="compass" class="placeholder-icon"></i>
+                            </div>
+                            <div class="project-badges">
+                                <span class="project-tag">UI/UX Design</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Oasis Travel Planner</h3>
+                            <p class="project-desc">Interactive high-fidelity prototypes and UI explorations for a modern, social-oriented traveling layout that automates routing APIs.</p>
+                            <div class="project-tech">
+                                <span>Figma</span>
+                                <span>Prototyping</span>
+                                <span>Design System</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View Figma Layout">
+                                    <i data-lucide="figma"></i> Design
+                                </a>
+                                <a href="#" class="project-link primary" aria-label="Live Prototype">
+                                    <i data-lucide="external-link"></i> Prototype
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card scroll-reveal" data-category="fullstack">
+                        <div class="project-image-wrapper">
+                            <div class="project-image-placeholder img-grad-4">
+                                <i data-lucide="lock" class="placeholder-icon"></i>
+                            </div>
+                            <div class="project-badges">
+                                <span class="project-tag">Fullstack</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">CipherChat Crypt Messenger</h3>
+                            <p class="project-desc">End-to-end encrypted chats operating over websocket protocol with customizable temporary room setups.</p>
+                            <div class="project-tech">
+                                <span>WebSockets</span>
+                                <span>Express</span>
+                                <span>React</span>
+                                <span>WebCrypto</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View Code">
+                                    <i data-lucide="github"></i> Code
+                                </a>
+                                <a href="#" class="project-link primary" aria-label="Live Demo">
+                                    <i data-lucide="external-link"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card scroll-reveal" data-category="frontend">
+                        <div class="project-image-wrapper">
+                            <div class="project-image-placeholder img-grad-5">
+                                <i data-lucide="music" class="placeholder-icon"></i>
+                            </div>
+                            <div class="project-badges">
+                                <span class="project-tag">Frontend</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Echo Music Player UI</h3>
+                            <p class="project-desc">A premium, glassmorphic layout audio web application rendering custom audio visualization nodes from browser AudioContext APIs.</p>
+                            <div class="project-tech">
+                                <span>Web Audio API</span>
+                                <span>JS ES6</span>
+                                <span>CSS Grid</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View Code">
+                                    <i data-lucide="github"></i> Code
+                                </a>
+                                <a href="#" class="project-link primary" aria-label="Live Demo">
+                                    <i data-lucide="external-link"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-subtitle">Let's Create Together</span>
+                    <h2 class="section-title">Contact Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Info details -->
+                    <div class="contact-info scroll-reveal">
+                        <h3>Connect With Me</h3>
+                        <p class="contact-lead-text">Have a project in mind, a job opportunity, or just want to chat about engineering? Drop me a message and I'll respond within 24 hours.</p>
+                        
+                        <div class="info-list">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i data-lucide="mail"></i>
+                                </div>
+                                <div class="info-content">
+                                    <span>Email me at</span>
+                                    <a href="mailto:alex.rivera@example.com">alex.rivera@example.com</a>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i data-lucide="map-pin"></i>
+                                </div>
+                                <div class="info-content">
+                                    <span>Located in</span>
+                                    <p>San Francisco, CA (GMT-7)</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i data-lucide="calendar"></i>
+                                </div>
+                                <div class="info-content">
+                                    <span>Availability</span>
+                                    <p>Freelance & Full-time contract</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links-container">
+                            <h4>Find me on social media:</h4>
+                            <div class="social-links">
+                                <a href="#" aria-label="GitHub" class="social-icon"><i data-lucide="github"></i></a>
+                                <a href="#" aria-label="LinkedIn" class="social-icon"><i data-lucide="linkedin"></i></a>
+                                <a href="#" aria-label="Twitter" class="social-icon"><i data-lucide="twitter"></i></a>
+                                <a href="#" aria-label="Figma" class="social-icon"><i data-lucide="figma"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Card -->
+                    <div class="glass-card contact-card scroll-reveal">
+                        <form id="contact-form" class="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="form-name">Your Name</label>
+                                <div class="input-wrapper">
+                                    <i data-lucide="user" class="input-icon"></i>
+                                    <input type="text" id="form-name" name="name" placeholder="John Doe" required>
+                                </div>
+                                <span class="error-msg" id="name-error">Please tell me your name.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-email">Your Email</label>
+                                <div class="input-wrapper">
+                                    <i data-lucide="mail" class="input-icon"></i>
+                                    <input type="email" id="form-email" name="email" placeholder="john@example.com" required>
+                                </div>
+                                <span class="error-msg" id="email-error">Please enter a valid email address.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-subject">Subject</label>
+                                <div class="input-wrapper">
+                                    <i data-lucide="bookmark" class="input-icon"></i>
+                                    <input type="text" id="form-subject" name="subject" placeholder="Project Collaboration" required>
+                                </div>
+                                <span class="error-msg" id="subject-error">Please enter a subject.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-message">Message</label>
+                                <div class="input-wrapper text-area-wrap">
+                                    <i data-lucide="message-square" class="input-icon"></i>
+                                    <textarea id="form-message" name="message" rows="5" placeholder="Let's build something awesome..." required></textarea>
+                                </div>
+                                <span class="error-msg" id="message-error">Please enter your message.</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary submit-btn" id="submit-btn">
+                                <span>Send Message</span>
+                                <i data-lucide="send" id="submit-icon"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Visual Floating Notifications -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 Creative Alex Rivera. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
