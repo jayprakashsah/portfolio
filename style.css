@@ -974,6 +974,15 @@ body.light-mode .tag {
 .project-card:hover .project-image-placeholder {
     transform: scale(1.06);
 }
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow) ease;
+}
+.project-card:hover .project-image {
+    transform: scale(1.06);
+}
 
 /* Gradients for project visual backgrounds */
 .img-grad-1 { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
@@ -1590,6 +1599,16 @@ body.light-mode .modal-close-btn {
     height: 80px;
     color: rgba(255, 255, 255, 0.9);
     filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+}
+.modal-media-image {
+    width: 100%;
+    height: 360px;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    object-fit: cover;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    display: block;
 }
 
 .modal-info-side {

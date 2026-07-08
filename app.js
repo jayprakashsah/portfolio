@@ -289,6 +289,7 @@ const PROJECT_DETAILS = {
         gitLink: 'https://github.com/jayprakashsah',
         liveLink: 'https://github.com/jayprakashsah',
         imgGrad: 'img-grad-2',
+        mediaSrc: 'assets/personal-assistant.png',
         icon: 'bot',
         desc: `
             <p>An advanced multimodal physical assistant powered by a Raspberry Pi 5. It bridges intelligent high-level software logic with direct physical actuators control.</p>
@@ -310,6 +311,7 @@ const PROJECT_DETAILS = {
         gitLink: 'https://github.com/jayprakashsah',
         liveLink: 'https://github.com/jayprakashsah',
         imgGrad: 'img-grad-3',
+        mediaSrc: 'assets/ecommerce.png',
         icon: 'shopping-bag',
         desc: `
             <p>A secure digital commerce marketplace built using the MERN stack. Designed with performance and database scalability at its core.</p>
@@ -352,6 +354,7 @@ const PROJECT_DETAILS = {
         gitLink: 'https://github.com/jayprakashsah',
         liveLink: 'https://github.com/jayprakashsah',
         imgGrad: 'img-grad-5',
+        mediaSrc: 'assets/farmer-friend.png',
         icon: 'sprout',
         desc: `
             <p><strong>Farmer Friend</strong> is a smart AI-driven agricultural mobile application offering leaf disease detection, automated treatment suggestions, and climate-adaptive plant healthcare recommendations.</p>
@@ -373,6 +376,7 @@ const PROJECT_DETAILS = {
         gitLink: 'https://github.com/jayprakashsah',
         liveLink: 'https://github.com/jayprakashsah',
         imgGrad: 'img-grad-3',
+        mediaSrc: 'assets/health-guardian.png',
         icon: 'shield-alert',
         desc: `
             <p><strong>Health Guardian AI</strong> is a comprehensive emergency health navigation and AI-driven dermatological diagnostics platform.</p>
@@ -394,6 +398,7 @@ const PROJECT_DETAILS = {
         gitLink: 'https://github.com/jayprakashsah',
         liveLink: 'https://github.com/jayprakashsah',
         imgGrad: 'img-grad-2',
+        mediaSrc: 'assets/robot-dog.jpg',
         icon: 'dog',
         desc: `
             <p>A professional quadrupedal robot dog designed and engineered from the ground up, combining mechanical structures, custom PCB electronics, and high-frequency control algorithms.</p>
@@ -453,10 +458,15 @@ function initProjectModal() {
             document.getElementById('modal-project-date').textContent = data.date;
             document.getElementById('modal-project-desc').innerHTML = data.desc;
 
-            // Inject Media Placeholder
+            // Inject Media Placeholder or Image
             const mediaWrap = document.getElementById('modal-project-media');
-            mediaWrap.className = `modal-media-placeholder ${data.imgGrad}`;
-            mediaWrap.innerHTML = `<i data-lucide="${data.icon}" class="placeholder-icon"></i>`;
+            if (data.mediaSrc) {
+                mediaWrap.className = 'modal-media-image-wrapper';
+                mediaWrap.innerHTML = `<img src="${data.mediaSrc}" alt="${data.title}" class="modal-media-image">`;
+            } else {
+                mediaWrap.className = `modal-media-placeholder ${data.imgGrad}`;
+                mediaWrap.innerHTML = `<i data-lucide="${data.icon}" class="placeholder-icon"></i>`;
+            }
 
             // Inject Tags
             const tagsContainer = document.getElementById('modal-project-tags');
