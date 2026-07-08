@@ -364,6 +364,27 @@ const PROJECT_DETAILS = {
                 <li><strong>Crop Recommendations</strong>: Recommends the optimal crop species to plant based on longitudinal regional climate trends.</li>
             </ul>
         `
+    },
+    'health-guardian': {
+        title: 'Health Guardian AI',
+        date: '2025',
+        category: 'Emergency Care & Diagnostics',
+        tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Python FastAPI', 'Google Maps', 'PyTorch'],
+        gitLink: 'https://github.com/jayprakashsah',
+        liveLink: 'https://github.com/jayprakashsah',
+        imgGrad: 'img-grad-3',
+        icon: 'shield-alert',
+        desc: `
+            <p><strong>Health Guardian AI</strong> is a comprehensive emergency health navigation and AI-driven dermatological diagnostics platform.</p>
+            <p>This project is designed to bridge urgent care needs with automated pre-clinical image classification, facilitating faster, geo-targeted medical aid.</p>
+            <h4>Core Technical Implementations:</h4>
+            <ul>
+                <li><strong>Geo-Location Hospital Finder</strong>: Implements Google Maps APIs to locate and list local hospitals within driving radius.</li>
+                <li><strong>Condition-Based Suggestions</strong>: Analyzes reported symptoms or diseases to direct the patient to specialized clinics or medical facilities.</li>
+                <li><strong>Live Blood Registry</strong>: Coordinates real-time blood bank availability and donation contacts across regional centers.</li>
+                <li><strong>AI Skin Disease Classifier</strong>: Integrates a PyTorch-based convolutional image classification model to analyze photographic skin scans for dermatological conditions.</li>
+            </ul>
+        `
     }
 };
 
