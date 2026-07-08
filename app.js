@@ -406,6 +406,27 @@ const PROJECT_DETAILS = {
                 <li><strong>Inverse Kinematics Solver</strong>: Coded kinematic walking gait models executing real-time trajectory sweeps for balancing on uneven surfaces.</li>
             </ul>
         `
+    },
+    'scintent-lab': {
+        title: 'Scintent Lab',
+        date: '2026 (Completed)',
+        category: 'Educational Robotics',
+        tech: ['React', 'Three.js', 'Node.js', 'C++ (Arduino)', 'Embedded Systems'],
+        gitLink: 'https://github.com/jayprakashsah',
+        liveLink: 'https://github.com/jayprakashsah',
+        imgGrad: 'img-grad-4',
+        icon: 'wrench',
+        desc: `
+            <p><strong>Scintent Lab</strong> is a comprehensive educational platform that guides builders to engineer their own custom desktop companion robots from scratch.</p>
+            <p>This workspace details mechanical 3D design, simulation sandboxes, and low-level firmware testing to democratize robotic creations.</p>
+            <h4>Core Technical Implementations:</h4>
+            <ul>
+                <li><strong>Interactive 3D Robot Simulator</strong>: Leverages Three.js in a web sandbox to construct and manipulate virtual companion joints in real-time.</li>
+                <li><strong>Step-by-Step Schematics Guide</strong>: Comprehensive KiCad circuit guides mapping standard Arduino and ESP32 board microcontrollers.</li>
+                <li><strong>Interactive Firmware Compiler</strong>: Guides developers through serial compilation checks, flashing basic locomotion and face expressions scripts.</li>
+                <li><strong>Testing & Implementation Sandboxes</strong>: Simulated testbeds checking servo response sweeps and sensor logic before physical assembly.</li>
+            </ul>
+        `
     }
 };
 
