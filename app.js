@@ -268,6 +268,7 @@ const PROJECT_DETAILS = {
         gitLink: 'https://github.com/jayprakashsah',
         liveLink: 'https://github.com/jayprakashsah',
         imgGrad: 'img-grad-1',
+        mediaSrc: 'assets/kisan-sathi.jpg',
         icon: 'tractor',
         desc: `
             <p><strong>Kisan Sathi</strong> is a predictive plant protection ecosystem featuring an autonomous agricultural rover and a real-time digital advisory mobile dashboard application.</p>
@@ -289,7 +290,7 @@ const PROJECT_DETAILS = {
         gitLink: 'https://github.com/jayprakashsah',
         liveLink: 'https://github.com/jayprakashsah',
         imgGrad: 'img-grad-2',
-        mediaSrc: 'assets/personal-assistant.png',
+        mediaSrc: 'assets/personal-assistant.jpg',
         icon: 'bot',
         desc: `
             <p>An advanced multimodal physical assistant powered by a Raspberry Pi 5. It bridges intelligent high-level software logic with direct physical actuators control.</p>
@@ -420,6 +421,7 @@ const PROJECT_DETAILS = {
         gitLink: 'https://github.com/jayprakashsah',
         liveLink: 'https://github.com/jayprakashsah',
         imgGrad: 'img-grad-4',
+        mediaSrc: 'assets/scintent-lab.png',
         icon: 'wrench',
         desc: `
             <p><strong>Scintent Lab</strong> is a comprehensive educational platform that guides builders to engineer their own custom desktop companion robots from scratch.</p>
