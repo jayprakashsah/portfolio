@@ -1163,6 +1163,10 @@ body.light-mode .info-icon {
     border-radius: var(--border-radius-sm);
     transition: transform var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
 }
+.social-icon svg, .social-icon i {
+    width: 20px;
+    height: 20px;
+}
 .social-icon:hover {
     transform: translateY(-3px);
     border-color: var(--accent-secondary);
